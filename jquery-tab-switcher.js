@@ -16,6 +16,13 @@ KISCODE.TabSwitcher = function( config ) {
 	this.$tabs 		= this.$container.find('.tab-content');
 	this.animate 	= config.animate;
 	this.eventType 	= $.inArray( config.eventType, [ 'hover', 'click' ] ) > -1 ? config.eventType : 'click';
+	this.stateful 	= config.allowCookies;
+	this.kiscookie 	= 'kistabs' + $.inArray( this, window.kismet.components );
+	
+	// Check if the jQuery.cookie is available
+	if( this.stateful && $.cookie && $.cookie( this.kiscookie ) ) {
+		this.currentIdx = parseInt( $.cookie( this.kiscookie ) );
+	}
 
 	this.$tabs.eq( this.currentIdx ).addClass('selected');
 	this.switchTab( this.currentIdx );	
@@ -67,19 +74,11 @@ KISCODE.TabSwitcher.prototype.switchTab = function( index ) {
 		this.$tabs.eq( index ).show().addClass('selected');
 	}
 
+	if( this.stateful && $.cookie ) {
+		$.cookie( this.kiscookie, index );
+	}
+
 	this.currentIdx = index;
 	return false;
 };
-
-$( function() {
-	if( !window.kismet ) {
-		window.kismet = {};
-	}
-	window.kismet.components = window.kismet.components || [];
-	window.kismet.components.push( new KISCODE.TabSwitcher( {
-		container: ".dem-tabs",
-		defaultTab: 1,
-		animate: true
-	} ) );
-} );
 

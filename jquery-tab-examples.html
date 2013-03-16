@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KISCODE: Tab Switcher</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-tab-switcher.js"></script>
+	<script tyoe="text/javascript">
+		$( function() {
+			if( !window.kismet ) {
+				window.kismet = {};
+			}
+			window.kismet.components = window.kismet.components || [];
+			window.kismet.components.push( new KISCODE.TabSwitcher( {
+				container: ".dem-tabs",
+				defaultTab: 1,
+				animate: true
+			} ) );
+
+			window.kismet.components.push( new KISCODE.TabSwitcher( {
+				container: ".arrow-tabs",
+				circular: true,
+				prevButton: '.prev',
+				nextButton: '.next',
+				defaultTab: 1,
+				animate: true
+			} ) );
+		} );
+	</script>
+</head>
+<body>
+
+	<div class='row4 dem-tabs'>
+		<ul id='tab-strip'>
+			<li id='tab1' class='clickable'>Tab 1</li>
+			<li id='tab2' class='clickable'>Tab 2</li>
+			<li id='tab3' class='clickable'>Tab 3</li>
+			<li id='tab4' class='clickable'>Tab 4</li>
+		</ul>
+		<div class="tabs">
+			<div id='tab1-content' class='tab-content'>Hi from tab 1<br>How do you do</div>
+			<div id='tab2-content' class='tab-content'>Hi from tab 2<br>Testing, testing, 1 2 3</div>
+			<div id='tab3-content' class='tab-content'>Hi from tab 3<br>This is the second line</div>
+			<div id='tab4-content' class='tab-content'>Hi from tab 4<br>There is no place I'd rather be, than on my surfboard out at sea</div>
+		</div>
+	</div><br><br>
+
+	<div class='row4 arrow-tabs'>
+		<div class='prev'><</div>
+		<div class="tabs">
+			<div id='tab1-content' class='tab-content'>Hi from tab 1<br>How do you do</div>
+			<div id='tab2-content' class='tab-content'>Hi from tab 2<br>Testing, testing, 1 2 3</div>
+			<div id='tab3-content' class='tab-content'>Hi from tab 3<br>This is the second line</div>
+			<div id='tab4-content' class='tab-content'>Hi from tab 4<br>There is no place I'd rather be, than on my surfboard out at sea</div>
+		</div>
+		<div class='next'>></div>
+	</div><br><br>
+
+</body>
+</html>

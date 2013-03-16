@@ -1,0 +1,33 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.clickable {
+	display: inline;
+	border: 1px solid #000000;
+	border-bottom: 0px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+#tab-strip {
+	list-style: none outside none;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	background-color: #ffffff;
+}
+#tab-strip a { 
+	text-decoration: none; 
+}
+.tab-content {
+	display: none;
+}
+.tabs {
+	background-color: #ffff00;
+	border: 1px solid #000000;
+}
+
+.highlight {
+	background-color: #ffff00;
+}
