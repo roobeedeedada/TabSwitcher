@@ -81,4 +81,3 @@ KISCODE.TabSwitcher.prototype.switchTab = function( index ) {
 	this.currentIdx = index;
 	return false;
 };
-

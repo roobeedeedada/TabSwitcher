@@ -21,7 +21,7 @@
 	text-decoration: none; 
 }
 .tab-content {
-	display: none;
+	/*display: none;*/
 }
 .tabs {
 	background-color: #ffff00;
