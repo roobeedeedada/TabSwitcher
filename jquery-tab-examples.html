@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery-tab-switcher.js"></script>
+	<script type="text/javascript" src="jquery.cookie.min.js"></script>
 	<script tyoe="text/javascript">
 		$( function() {
 			if( !window.kismet ) {
@@ -14,7 +15,8 @@
 			window.kismet.components.push( new KISCODE.TabSwitcher( {
 				container: ".dem-tabs",
 				defaultTab: 1,
-				animate: true
+				animate: true,
+				allowCookies: true
 			} ) );
 
 			window.kismet.components.push( new KISCODE.TabSwitcher( {
